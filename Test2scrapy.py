@@ -11,7 +11,7 @@ try:
 except:
     pass
 os.chdir(os.path.join(os.getcwd(), tag))
-url = "%s%s/"%("https://nhentai.net/g/",tag)
+url = "%s%s/"%("https://newhen.net/g/",tag)
 page= requests.get(url)
 #html=page.text
 #print(html)
@@ -21,7 +21,7 @@ pages=soup.find_all("a", class_="gallerythumb")
 max_page=(len(pages))
 
 for x in pages:
-    url2 = "%s%s/%s/"%("https://nhentai.net/g/",tag,str(pages.index(x)+1))
+    url2 = "%s%s/%s/"%("https://newhen.net/g/",tag,str(pages.index(x)+1))
     #print(url2)
     page= requests.get(url2)
     soup = bs(page.content, "html.parser")
